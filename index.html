@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Examples</title>
+<title>Angular Examples</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 </head>
@@ -13,12 +13,21 @@
 	<a ui-sref="state2">state2</a>
 	<div ui-view></div>
 
+	<h1>Multiple & Named Views</h1>
+	<a ui-sref="index">index</a>
+	<a ui-sref="route1">Route1</a>
+	<a ui-sref="route2">Route2</a>
+	<div ui-view="viewA"></div>
+	<div ui-view="viewB"></div>
+	<br>
+
     <div ng-controller="AlertController" ng-init="msg='text for alert'">
     	<h2>Custom Alert Service</h1>
     	<input ng-model="msg" />
 	    <button ng-click="message(msg);">Click me</button>
 	    <p>{{msg}}</p>
     </div>
+    <!-- custom script -->
 	<script type="text/javascript" src="/components/angular.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 	<script type="text/javascript" src="/Alert/AlertController.js"></script>

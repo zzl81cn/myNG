@@ -22,14 +22,21 @@
 	<br>
 
     <div ng-controller="AlertController" ng-init="msg='text for alert'">
-    	<h2>Custom Alert Service</h1>
+    	<h2>Custom Alert Service</h2>
     	<input ng-model="msg" />
 	    <button ng-click="message(msg);">Click me</button>
 	    <p>{{msg}}</p>
     </div>
-    <!-- custom script -->
+
+	<!--<div class="ueditor" ng-model="content"></div>-->
+
+
+	<!-- custom script -->
 	<script type="text/javascript" src="/components/angular.js"></script>
 	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="/components/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" src="/components/ueditor/ueditor.all.js"></script>
+	<script type="text/javascript" src="/components/angular-ueditor.js"></script>
 	<script type="text/javascript" src="/Alert/AlertController.js"></script>
 	<script type="text/javascript" src="/Alert/alertService.js"></script>
 	<script type="text/javascript" src="/components/angular-ui/ui-router/angular-ui-router.js"></script>

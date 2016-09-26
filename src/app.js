@@ -6,7 +6,8 @@
  */
 
 var alertModule = angular.module('alertApp', [
-	'ui.router'
+	'ui.router',
+	'ng.ueditor'
 ]);
 alertModule.config(function($stateProvider, $urlRouterProvider){
 

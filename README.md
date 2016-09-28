@@ -23,4 +23,9 @@ $http.post("http://example.appspot.com/rest/app", {"foo":"bar"})
     $scope.status = status;
 });
 ```
+There are number of things to notice:
 
+* AngularJS version is more concise (especially using .post() method)
+* AngularJS will take care of converting JS objects into JSON string and setting headers (those are customizable)
+* Callback functions are named success and error respectively (also please note parameters of each callback)
+* The above is just a quick example and some pointers, be sure to check AngularJS documentation for more: http://docs.angularjs.org/api/ng.$http

@@ -2,7 +2,7 @@
 
 > 使用Gulp构建工具，没有使用bower，纯手动添加组件。
 
-#### The AngularJS way of calling $http would look like:
+#### <a href="http://stackoverflow.com/questions/12131659/from-jquery-ajax-to-angular-http">The AngularJS way of calling $http would look like</a>:
 ``` javascript
 $http({
     url: "http://example.appspot.com/rest/app",

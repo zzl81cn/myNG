@@ -18,9 +18,13 @@
 AlertController.$inject = ['$scope', '$alert'];
 alertModule.controller('AlertController', AlertController);*/
 
-alertModule.controller('AlertController', ['$scope', '$alert', function($scope, $alert){
+alertModule.controller('AlertController', ['$scope', '$alert', '$modal', function($scope, $alert, $modal){
 	$scope.message = function(msg){
 		console.log(msg);
 		$alert.alert(msg);
-	}
+	};
+
+	// Button to trigger a default modal with a scope as an object {title:'', content:'', etc.}
+	$scope.modal = {title: 'Title', content: 'Hello Modal<br />This is a multiline message!<br /> Ha.'};
+
 }]);

@@ -10,6 +10,7 @@ var alertModule = angular.module('alertApp', [
     ,'ngAnimate'
     ,'ngSanitize'
 	,'mgcrea.ngStrap'
+	,'ui.select2'
 	// ,'ng.ueditor'
 ]);
 alertModule.config(function($stateProvider, $urlRouterProvider){

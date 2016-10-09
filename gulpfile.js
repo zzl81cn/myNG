@@ -20,7 +20,7 @@ gulp.task('serve', ['lessTask','sassTask','jsminTask'], function(){
 		server: "./src",
 	    open: false,
 	    ghostMode: false,
-		port: 9001
+		port: 9005
 	});
 	gulp.watch("./less/*.less", ['lessTask']);
 	gulp.watch("./sass/*.scss", ['sassTask']);

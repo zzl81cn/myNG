@@ -27,4 +27,15 @@ alertModule.controller('AlertController', ['$scope', '$alert', '$modal', functio
 	// Button to trigger a default modal with a scope as an object {title:'', content:'', etc.}
 	$scope.modal = {title: 'Title', content: 'Hello Modal<br />This is a multiline message!<br /> Ha.'};
 
+	// select2
+	var vm = $scope.vm = {};
+	vm.option1 = {
+		allowClear:true
+	};
+	vm.option2 = {
+		'multiple': true,
+		'simple_tags': true,
+		'tags': ['tag1', 'tag2', 'tag3', 'tag4']
+	};
+
 }]);

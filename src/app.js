@@ -9,8 +9,8 @@ var alertModule = angular.module('alertApp', [
     'ui.router',
 	'ngAnimate',
 	'ngSanitize',
-	'mgcrea.ngStrap',
 	'ui.bootstrap',
+	'mgcrea.ngStrap',
 	'ui.select2'
 	// ,'ng.ueditor'
 ]);

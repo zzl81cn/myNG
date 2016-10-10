@@ -18,7 +18,7 @@
 AlertController.$inject = ['$scope', '$alert'];
 alertModule.controller('AlertController', AlertController);*/
 
-alertModule.controller('AlertController', ['$scope', '$alert', '$modal', function($scope, $alert, $modal){
+alertModule.controller('AlertController', ['$scope', '$alert', '$modal', '$window', function($scope, $alert, $window, $modal){
 
     // angular-ui-bootstrap v2.1.4
 	$scope.tabs = [
@@ -36,13 +36,13 @@ alertModule.controller('AlertController', ['$scope', '$alert', '$modal', functio
 		name: 'Tabs'
 	};
 
-
+    // myNG
 	$scope.message = function(msg){
 		console.log(msg);
 		$alert.alert(msg);
 	};
 
-    // custom services
+    // angular-strap modal
 	// Button to trigger a default modal with a scope as an object {title:'', content:'', etc.}
 	$scope.modal = {title: 'Title', content: 'Hello Modal oo<br />This is a multiline message!<br /> Ha.'};
 

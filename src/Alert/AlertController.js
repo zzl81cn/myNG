@@ -19,15 +19,34 @@ AlertController.$inject = ['$scope', '$alert'];
 alertModule.controller('AlertController', AlertController);*/
 
 alertModule.controller('AlertController', ['$scope', '$alert', '$modal', function($scope, $alert, $modal){
+
+    // angular-ui-bootstrap v2.1.4
+	$scope.tabs = [
+		{ title:'Dynamic Title 1', content:'Dynamic content 1' },
+		{ title:'Dynamic Title 2', content:'Dynamic content 2', disabled: true }
+	];
+
+	$scope.alertMe = function() {
+		setTimeout(function() {
+			$window.alert('You\'ve selected the alert tab!');
+		});
+	};
+
+	$scope.model = {
+		name: 'Tabs'
+	};
+
+
 	$scope.message = function(msg){
 		console.log(msg);
 		$alert.alert(msg);
 	};
 
+    // custom services
 	// Button to trigger a default modal with a scope as an object {title:'', content:'', etc.}
 	$scope.modal = {title: 'Title', content: 'Hello Modal oo<br />This is a multiline message!<br /> Ha.'};
 
-	// select2
+	// angular-ui select2
 	var vm = $scope.vm = {};
 	vm.option1 = {
 		allowClear:true
@@ -37,5 +56,6 @@ alertModule.controller('AlertController', ['$scope', '$alert', '$modal', functio
 		'simple_tags': true,
 		'tags': ['tag1', 'tag2', 'tag3', 'tag4']
 	};
+    vm.value2 = ['应用', '模型', '数据'];
 
 }]);

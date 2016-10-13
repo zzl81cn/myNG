@@ -2,6 +2,16 @@
 
 > 使用Gulp构建工具，没有使用bower，纯手动添加组件。
 
+#### Install
+```bash
+$ npm install
+```
+
+#### Run
+```bash
+$ gulp or gulp serve
+```
+
 #### <a href="http://stackoverflow.com/questions/12131659/from-jquery-ajax-to-angular-http">The AngularJS way of calling $http would look like</a>:
 ``` javascript
 $http({

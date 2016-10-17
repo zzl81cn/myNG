@@ -16,9 +16,10 @@ var alertModule = angular.module('alertApp', [
 ]);
 alertModule.config(function($stateProvider, $urlRouterProvider){
 
+    $urlRouterProvider.when('', '/root/alert');
+    $urlRouterProvider.when('/', '/root/alert');
 	// 如果没有匹配的URL，就定向到此URL地址
-	$urlRouterProvider.otherwise('/root/main');
-
+	// $urlRouterProvider.otherwise('/root/alert');
 	$stateProvider
 		.state('root', {
 			url: '/root',
@@ -31,8 +32,8 @@ alertModule.config(function($stateProvider, $urlRouterProvider){
 				}
 			}
 		})
-        .state('root.main', {
-            url: '/main',
+        .state('root.alert', {
+            url: '/alert',
             templateUrl: 'Alert/Alert.html',
             controller: 'AlertController'
         })

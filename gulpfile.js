@@ -15,7 +15,7 @@ var gulp = require('gulp'),
 	jsmin = require('gulp-uglify'),
 	browserSync = require('browser-sync').create();
 
-gulp.task('serve', ['lessTask','sassTask','jsminTask'], function(){
+gulp.task('serve', ['sassTask'], function(){
 	browserSync.init({
 		server: "./src",
 	    open: false,
@@ -26,7 +26,7 @@ gulp.task('serve', ['lessTask','sassTask','jsminTask'], function(){
 	gulp.watch("./sass/*.scss", ['sassTask']);
 	gulp.watch("./js/*.js", ['jsminTask']);
 	// gulp.watch("./css/*.css", ['autoPrefixer']);
-	gulp.watch("./*.html").on('change', browserSync.reload);
+	gulp.watch("./**/*.html").on('change', browserSync.reload);
 });
 
 gulp.task('lessTask', function(){

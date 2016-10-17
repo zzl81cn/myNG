@@ -12,100 +12,23 @@
     <meta name="keywords" content="">
 </head>
 <body>
-	<h1>xx</h1>
-	<a ui-sref="state1">state1</a>
-	<a ui-sref="state2">state2</a>
-	<div ui-view></div>
+    <div id="header" class="header" ui-view="head"></div>
+    <div class="container" ui-view></div>
 
-	<h1>Multiple & Named Views</h1>
-	<a ui-sref="index">index</a>
-	<a ui-sref="route1">Route1</a>
-	<a ui-sref="route2">Route2</a>
-	<div ui-view="viewA"></div>
-	<div ui-view="viewB"></div>
-	<br>
-
-    <div ng-controller="AlertController" ng-init="msg='text for alert'">
-        <h2>angular-ui-bootstrap2.1.4</h2>
-        <p>Select a tab by setting active binding to true:</p>
-        <p>
-            <button type="button" class="btn btn-default btn-sm" ng-click="active = 1">Select second tab</button>
-            <button type="button" class="btn btn-default btn-sm" ng-click="active = 2">Select third tab</button>
-        </p>
-        <p>
-            <button type="button" class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">Enable / Disable third tab</button>
-        </p>
-        <hr />
-
-        <uib-tabset active="active">
-            <uib-tab index="0" heading="Static title">Static content</uib-tab>
-            <uib-tab index="$index + 1" ng-repeat="tab in tabs" heading="{{tab.title}}" disable="tab.disabled">
-                {{tab.content}}
-            </uib-tab>
-            <uib-tab index="3" select="alertMe()">
-                <uib-tab-heading>
-                    <i class="glyphicon glyphicon-bell"></i> Alert!
-                </uib-tab-heading>
-                I've got an HTML heading, and a select callback. Pretty cool!
-            </uib-tab>
-        </uib-tabset>
-
-        <hr />
-        <uib-tabset active="activePill" vertical="true" type="pills">
-            <uib-tab index="0" heading="Vertical 1">Vertical content 1</uib-tab>
-            <uib-tab index="1" heading="Vertical 2">Vertical content 2</uib-tab>
-        </uib-tabset>
-
-        <hr />
-        <uib-tabset active="activeJustified" justified="true">
-            <uib-tab index="0" heading="Justified">Justified content</uib-tab>
-            <uib-tab index="1" heading="SJ">Short Labeled Justified content</uib-tab>
-            <uib-tab index="2" heading="Long Justified">Long Labeled Justified content</uib-tab>
-        </uib-tabset>
-
-        <hr />
-
-
-		<!-- Button to trigger a default modal with a scope as an object {title:'', content:'', etc.} -->
-	    <button type="button" class="btn btn-lg btn-primary" data-animation="am-fade-and-scale" data-placement="center" bs-modal="modal"><i class="fa fa-check"></i>Click to toggle modal
-	      <br />
-	      <small>(using an object)</small>
-	    </button>
-
-    	<h2>Custom Alert Service</h2>
-    	<input ng-model="msg" />
-	    <button ng-click="message(msg);">Click me</button>
-	    <p>{{msg}}</p>
-
-        <h2>select2</h2>
-        <div class="row">
-            <div class="col-md-2">单选下拉</div>
-            <div class="col-md-5">
-                <select ui-select2="vm.option1" ng-model="vm.value1" style="width: 100%">
-                    <option value="one">First</option>
-                    <option value="two">Second</option>
-                    <option value="three">Third</option>
-                </select>
-            </div>
-            <div class="col-md-5">{{vm.value1}}</div>
+    <div class="footer">
+        <div class="container">
+            <p><span class="fa fa-heart"></span> from the Yeoman team</p>
         </div>
-        <br/>
-        <div class="row">
-            <div class="col-md-2">多选输入</div>
-            <div class="col-md-5">
-                <input type="text" ui-select2="vm.option2" ng-model="vm.value2" ng-model="vm.value2" style="width: 100%"/>
-            </div>
-            <div class="col-md-5">{{vm.value2}}</div>
-        </div>
-
     </div>
+
+
 
 	<!--<div class="ueditor" ng-model="content"></div>-->
 
 
 	<!-- thirdpart components -->
-	<script type="text/javascript" src="/components/jquery/dist/jquery.js"></script>
-	<script type="text/javascript" src="/components/angular/angular-1.5.8.js"></script>
+    <script type="text/javascript" src="components/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="components/angular/angular-1.5.8.js"></script>
 	<!--<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.5.0/css/font-awesome.css">-->
 	<!--<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css">-->
 
@@ -118,9 +41,9 @@
 	<!--<link rel="stylesheet" href="style.css" />-->
 	<!--<script src="//cdn.jsdelivr.net/angularjs/1.5.5/angular.min.js" data-semver="1.5.5"></script>-->
     <!--<script type="text/javascript" src="/components/angular-animate-1.5.9/angular-animate.js"></script>-->
-    <script type="text/javascript" src="/components/mgcrea/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="components/mgcrea/angular-animate/angular-animate.js"></script>
     <!--<script type="text/javascript" src="/components/mgcrea/angular-animate/angular-animate.min.js"></script>-->
-    <script type="text/javascript" src="/components/mgcrea/angular-sanitize/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="components/mgcrea/angular-sanitize/angular-sanitize.min.js"></script>
 
     <!--<script src="//cdn.jsdelivr.net/angularjs/1.5.5/angular-animate.min.js" data-semver="1.5.5"></script>-->
 	<!--<script src="//cdn.jsdelivr.net/angularjs/1.5.5/angular-sanitize.min.js" data-semver="1.5.5"></script>-->
@@ -133,21 +56,21 @@
     <!--<script type="text/javascript" src="/components/tether/dist/js/tether.min.js"></script>-->
 
     <!--<script type="text/javascript" src="/components/bootstrap-3.3.7/dist/js/bootstrap.js"></script>-->
-    <script type="text/javascript" src="/components/angular-ui/ui-router/angular-ui-router.js"></script>
-	<script type="text/javascript" src="/components/angular-strap-2.3.6/dist/angular-strap.js"></script>
-	<script type="text/javascript" src="/components/angular-strap-2.3.6/dist/angular-strap.tpl.js"></script>
-	<script type="text/javascript" src="/components/angular-bootstrap-2.1.4/ui-bootstrap-tpls-2.1.4.js"></script>
-	<script type="text/javascript" src="/components/select2/select2.js"></script>
-	<script type="text/javascript" src="/components/angular-ui-select2/src/select2.js"></script>
-	<script type="text/javascript" src="/components/ueditor/ueditor.config.js"></script>
-	<script type="text/javascript" src="/components/ueditor/ueditor.all.js"></script>
-	<script type="text/javascript" src="/components/angular-ueditor.js"></script>
+    <script type="text/javascript" src="components/angular-ui/ui-router/angular-ui-router.js"></script>
+	<script type="text/javascript" src="components/angular-strap-2.3.6/dist/angular-strap.js"></script>
+	<script type="text/javascript" src="components/angular-strap-2.3.6/dist/angular-strap.tpl.js"></script>
+	<script type="text/javascript" src="components/angular-bootstrap-2.1.4/ui-bootstrap-tpls-2.1.4.js"></script>
+	<script type="text/javascript" src="components/select2/select2.js"></script>
+	<script type="text/javascript" src="components/angular-ui-select2/src/select2.js"></script>
+	<script type="text/javascript" src="components/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" src="components/ueditor/ueditor.all.js"></script>
+	<script type="text/javascript" src="components/angular-ueditor.js"></script>
 
 	<!-- end thirdpart components -->
 
 	<!-- custom script -->
 	<script type="text/javascript" src="app.js"></script>
-	<script type="text/javascript" src="/Alert/AlertController.js"></script>
-	<script type="text/javascript" src="/Alert/alertService.js"></script>
+	<script type="text/javascript" src="Alert/AlertController.js"></script>
+	<script type="text/javascript" src="Alert/alertService.js"></script>
 </body>
 </html>

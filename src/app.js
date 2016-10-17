@@ -17,9 +17,25 @@ var alertModule = angular.module('alertApp', [
 alertModule.config(function($stateProvider, $urlRouterProvider){
 
 	// 如果没有匹配的URL，就定向到此URL地址
-	$urlRouterProvider.otherwise('/state1');
+	$urlRouterProvider.otherwise('/root/main');
 
 	$stateProvider
+		.state('root', {
+			url: '/root',
+			views: {
+				'head': {
+                    templateUrl: 'views/head.html'
+				},
+				'': {
+					templateUrl: 'views/root.html'
+				}
+			}
+		})
+        .state('root.main', {
+            url: '/main',
+            templateUrl: 'Alert/Alert.html',
+            controller: 'AlertController'
+        })
 		.state('state1', {
 			url: '/state1',
 			templateUrl: 'partials/state1.html'

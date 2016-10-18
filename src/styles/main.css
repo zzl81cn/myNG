@@ -1,0 +1,265 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../bower_components/material-design-icons.woff2") format("woff2");
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  word-wrap: normal;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.flip-x {
+  perspective: 1000;
+  height: 200px;
+}
+.flip-x:hover .flipper {
+  transform: rotateX(180deg);
+}
+.flip-x.hover .flipper {
+  transform: rotateX(180deg);
+}
+.flip-x .flipper {
+  position: relative;
+  transition: .5s;
+  transform-style: preserve-3d;
+  transform-origin: 100% 100px;
+}
+.flip-x .flipper p {
+  word-break: break-word;
+}
+.flip-x .front,
+.flip-x .back {
+  backface-visibility: hidden;
+  position: absolute;
+  height: 200px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.flip-x .front {
+  background-color: #fff;
+  z-index: 2;
+}
+.flip-x .back {
+  background-color: #ffffcc;
+  transform: rotateX(180deg);
+}
+
+.flip-y {
+  perspective: 1000;
+}
+.flip-y.hover .flipper {
+  transform: rotateY(180deg);
+}
+.flip-y .flipper {
+  transition: .5s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.flip-y .flipper p {
+  word-break: break-word;
+}
+.flip-y .front,
+.flip-y .back {
+  backface-visibility: hidden;
+  position: absolute;
+  height: 200px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.flip-y .front {
+  background-color: #0ff;
+  z-index: 2;
+}
+.flip-y .back {
+  background-color: #ff0;
+  transform: rotateY(180deg);
+}
+
+.workbench-carousel.carousel {
+  background-color: #020202;
+}
+.workbench-carousel.carousel .carousel-indicators li {
+  outline: none;
+}
+.workbench-carousel.carousel .carousel-inner > .item > img {
+  min-width: 770px !important;
+}
+.workbench-carousel.carousel .carousel-control {
+  cursor: pointer;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+.navtabs-toggles {
+  margin-bottom: 15px;
+}
+
+.anchor {
+  border: 2px dashed DarkOrchid;
+  padding: 10px 10px 200px 10px;
+}
+
+.fixed-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(50, 50, 50, 0.4));
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.fixed-header > a {
+  display: inline-block;
+  margin: 5px 15px;
+  line-height: 30px;
+  color: #eeeeee;
+}
+.fixed-header > a:hover, .fixed-header > a:active {
+  transition: color 1s;
+  color: #fff;
+}
+
+[ng-drag], [ng-drag-clone] {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.drag-object, [ng-drag-clone], [ng-drop] [ng-drag] {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding-top: 40px;
+  display: inline-block;
+  margin: 0 10px;
+  cursor: move;
+  position: relative;
+  overflow: hidden;
+}
+
+.drag-object [ng-drag] {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+}
+
+[ng-drag-clone] {
+  margin: 0;
+}
+
+[ng-drag].drag-over {
+  border: solid 1px red;
+}
+
+[ng-drag].dragging {
+  opacity: 0.5;
+}
+
+[ng-drop] {
+  background: rgba(0, 255, 0, 0.5);
+  text-align: center;
+  height: 200px;
+  padding-top: 30px;
+  display: block;
+  margin: 20px auto;
+  position: relative;
+}
+
+[ng-drop].drag-enter {
+  border: solid 5px red;
+}
+
+[ng-drop] span.title {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 20px;
+  margin-left: -100px;
+  margin-top: -10px;
+}
+
+[ng-drop] div {
+  position: relative;
+  z-index: 2;
+}

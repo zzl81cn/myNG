@@ -1,0 +1,202 @@
+<!-- <div class="row">
+  <div class="col-md-6">
+    <div class="drag-object" ng-repeat="obj in draggableObjects" ng-if="obj.allowClone !== false">
+      {{obj.name}}
+      <div ng-drag="true" ng-drag-data="obj"></div>
+    </div>    
+  </div>
+  <div class="col-md-6">
+    <div ng-drop="true" ng-drop-success="onDropComplete($data,$event)" >
+      Drop area
+    </div>
+  </div>
+</div> -->
+<div class="container" ng-controller="MainCtrl">
+  <div class="row">
+    <h3>ngDraggable Clone</h3>
+  </div>
+  <div class="drag-object" ng-repeat="obj in draggableObjects" ng-if="obj.allowClone !== false">
+    {{obj.name}}
+    <div ng-drag="true" ng-drag-data="obj"></div>
+  </div>
+  <div class="drag-object" style="background-color: transparent; overflow: visible">
+    <div ng-drag="true" class="drag-object" ng-drag-data="draggableObjects[3]">{{draggableObjects[3].name}}</div>
+  </div>
+  <hr/>
+  <div ng-drop="true" ng-drop-success="onDropComplete1($data,$event)">
+    <span class="title">Drop area #1</span>
+    <div ng-repeat="obj in droppedObjects1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccess1($data,$event)">
+      {{obj.name}}
+    </div>
+  </div>
+  <hr>
+</div>
+<br><br>
+<div class="row">
+  <div class="col-md-3">
+    <div class="flip-x">
+      <div class="flipper">
+        <div class="front">
+          <h3>xxxxx</h3>
+          <p onclick="document.querySelector('#flipTigger').classList.toggle('hover');">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+        </div>
+        <div class="back">back</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <!-- flip start -->
+    <div class="flip-y" id="flipTigger">
+      <div class="flipper">
+        <div class="front">
+          <h3>front</h3>
+          <p>xxxxxxxxxxx</p>
+          <p ng-click="flipDemo($event);"><label for="">comment:</label>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+        </div>
+        <div class="back">
+          <h3>back <i class="fa fa-info-circle" ng-click="flip($event);"></i></h3>
+          <p ng-click="flipDemo($event);">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+        </div>
+      </div>
+    </div>
+    <!-- flip end -->
+  </div>
+  <div class="col-md-6">
+    <button class="btn btn-success btn-block" onclick="document.querySelector('#flipTigger').classList.toggle('hover');">触发翻转</button>
+    <button class="btn btn-default btn-block">empty</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-8">
+    <div style="height: 305px">
+      <carousel interval="myInterval">
+        <slide ng-repeat="slide in slides" active="slide.active">
+          <img ng-src="{{slide.image}}" style="margin:auto;">
+          <div class="carousel-caption">
+            <!-- <h4>Slide {{$index}}</h4> -->
+            <!-- <p>{{slide.text}}</p> -->
+          </div>
+        </slide>
+      </carousel>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="tab-area">
+      <p>Select a tab by setting active binding to true:</p>
+      <p>
+        <button class="btn btn-default btn-sm" ng-click="tabs[0].active = true">Select second tab</button>
+        <button class="btn btn-default btn-sm" ng-click="tabs[1].active = true">Select third tab</button>
+      </p>
+      <p>
+        <button class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">Enable / Disable third tab</button>
+      </p>
+      <hr />
+
+      <tabset>
+        <tab heading="Static title">Static content</tab>
+        <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">
+          {{tab.content}}
+        </tab>
+        <tab select="alertMe()">
+          <tab-heading>
+            <i class="glyphicon glyphicon-bell"></i> Alert!
+          </tab-heading>
+          I've got an HTML heading, and a select callback. Pretty cool!
+        </tab>
+      </tabset>
+
+      <hr />
+
+      <tabset vertical="true" type="pills">
+        <tab heading="Vertical 1">Vertical content 1</tab>
+        <tab heading="Vertical 2">Vertical content 2</tab>
+      </tabset>
+
+      <hr />
+
+      <tabset class="data-rank" justified="true">
+        <tab heading="Justified">Justified content</tab>
+        <tab heading="SJ">
+          <ul class="rank-1">
+            <li ng-repeat="rank in rankContent">{{rank.name}}&nbsp;{{rank.acount}}</li>
+          </ul>
+
+        </tab>
+      </tabset>
+    </div>
+
+    <div class="date-modules">
+      <form name="datepickerForm" class="form-inline" role="form">
+        <!-- Basic example -->
+        <div class="form-group" ng-class="{'has-error': datepickerForm.date.$invalid}">
+          <label class="control-label"><i class="fa fa-calendar"></i> Date <small>(as date)</small></label>
+          <input type="text" class="form-control" ng-model="selectedDate" name="date" bs-datepicker>
+        </div>
+        <!-- Custom example -->
+        <div class="form-group" ng-class="{'has-error': datepickerForm.date2.$invalid}">
+          <label class="control-label"><i class="fa fa-calendar"></i> Date <small>(as number)</small></label>
+          <input type="text" class="form-control" ng-model="selectedDateAsNumber" data-date-format="yyyy-MM-dd" data-date-type="number" data-min-date="02/10/86" data-max-date="today" data-autoclose="1" name="date2" bs-datepicker>
+        </div>
+        <hr>
+        <!-- Date range example -->
+        <div class="form-group">
+          <label class="control-label"><i class="fa fa-calendar"></i> <i class="fa fa-arrows-h"></i> <i class="fa fa-calendar"></i> Date range <small>(dynamic)</small></label><br>
+          <div class="form-group col-xs-6">
+            <input type="text" class="form-control" ng-model="fromDate"  data-max-date="{{untilDate}}" placeholder="From" bs-datepicker>
+          </div>
+          <div class="form-group col-xs-6">
+            <input type="text" class="form-control" ng-model="untilDate"  data-min-date="{{fromDate}}" placeholder="Until" bs-datepicker>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div>
+      <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+      <button class='btn btn-default' ng-click="addAlert()">Add Alert</button>
+    </div>
+    <div class="jumbotron">
+      <h1>'Allo, 'Allo!</h1>
+      <p class="lead">
+        <img src="images/yeoman.png" alt="I'm Yeoman"><br>
+        Always a pleasure scaffolding your apps.
+      </p>
+      <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="fa fa-check"></span></a></p>
+      <ul>
+        <li ng-repeat="thing in awesomeThings">{{thing}}</li>
+        <li ng-repeat="thing2 in bwesomeThings">{{thing2}}</li>
+      </ul>
+    </div>
+
+    <div class="row marketing">
+      <h4>HTML5 Boilerplate</h4>
+      <p>
+        HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+      </p>
+
+      <h4>Angular</h4>
+      <p>
+        AngularJS is a toolset for building the framework most suited to your application development.
+      </p>
+
+      <h4>Karma</h4>
+      <p>Spectacular Test Runner for JavaScript.</p>
+      <a ng-click="goToTop()" href="" class="btn btn-default">goto top</a>
+      <!-- anchor x -->
+      <div class="fixed-header">
+        <a href="" ng-click="gotoAnchor(x)" ng-repeat="x in [1,2,3,4,5]">
+          Go to anchor {{x}}
+        </a>
+      </div>
+      <div id="anchor{{x}}" class="anchor" ng-repeat="x in [1,2,3,4,5]">
+        Anchor {{x}} of 5
+      </div>
+    </div>
+  </div>
+  <nav mfb-menu position="br" effect="slidein-spring" label="hover here"
+     active-icon="ion-close-round" resting-icon="ion-plus-round"
+     toggling-method="click">
+    <!-- <button mfb-button icon="paper-airplane" label="menu item"></button> -->
+    <a mfb-button icon="{{btn.icon}}" label="{{btn.label}}" ng-repeat="btn in mfbButtons"></a>
+  </nav>
+</div>

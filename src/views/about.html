@@ -1,0 +1,261 @@
+<!--starRating directive-->
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Angular star-rating directive</h3>
+        </div>
+        <div class="panel-body">
+            <div star-rating ng-model="rating1" max="10" on-rating-selected="ratingFunction(rating)"></div>
+            <star-rating ng-model="rating2" readonly="isReadOnly"></star-rating>
+            <label for="">
+                <input type="checkbox" ng-model="isReadOnly"/>IsReadOnly
+            </label>
+            <p><strong>Rating1:</strong>{{rating1}}</p>
+            <p><strong>Rating2:</strong>{{rating2}}</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">xxxxx</h3>
+        </div>
+        <div class="panel-body">
+            <a class="btn btn-default" data-animation="am-fade-and-slide-top"
+               data-template="views/about/modal-example.tpl.html" bs-modal="modal">Jump consultant workbench</a>&nbsp;
+            <a class="btn btn-default" data-animation="am-fade-and-scale" data-placement="cener"
+               bs-modal="modal-object">data-obj</a>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <p>AngularUI Router is a routing framework for AngularJS, which allows you to organize the parts of your interface
+        into a state machine. Unlike the $route service in Angular core, which is organized around URL routes, UI-Router
+        is organized around states, which may optionally have routes, as well as other behavior, attached.States are
+        bound to named, nested and parallel views, allowing you to powerfully manage your application's
+        interface.Warning: UI-Router is pre-beta and under active development. As such, while this library is
+        well-tested, the API is subject to change. Using it in a project that requires guaranteed stability is not
+        recommended.</p>
+
+    <p>AngularUI Router is a routing framework for AngularJS, which allows you to organize the parts of your interface
+        into a state machine. Unlike the $route service in Angular core, which is organized around URL routes, UI-Router
+        is organized around states, which may optionally have routes, as well as other behavior, attached.States are
+        bound to named, nested and parallel views, allowing you to powerfully manage your application's
+        interface.Warning: UI-Router is pre-beta and under active development. As such, while this library is
+        well-tested, the API is subject to change. Using it in a project that requires guaranteed stability is not
+        recommended.</p>
+
+    <p>AngularUI Router is a routing framework for AngularJS, which allows you to organize the parts of your interface
+        into a state machine. Unlike the $route service in Angular core, which is organized around URL routes, UI-Router
+        is organized around states, which may optionally have routes, as well as other behavior, attached.States are
+        bound to named, nested and parallel views, allowing you to powerfully manage your application's
+        interface.Warning: UI-Router is pre-beta and under active development. As such, while this library is
+        well-tested, the API is subject to change. Using it in a project that requires guaranteed stability is not
+        recommended.</p>
+
+    <p>AngularUI Router is a routing framework for AngularJS, which allows you to organize the parts of your interface
+        into a state machine. Unlike the $route service in Angular core, which is organized around URL routes, UI-Router
+        is organized around states, which may optionally have routes, as well as other behavior, attached.States are
+        bound to named, nested and parallel views, allowing you to powerfully manage your application's
+        interface.Warning: UI-Router is pre-beta and under active development. As such, while this library is
+        well-tested, the API is subject to change. Using it in a project that requires guaranteed stability is not
+        recommended.</p>
+
+    <p>AngularUI Router is a routing framework for AngularJS, which allows you to organize the parts of your interface
+        into a state machine. Unlike the $route service in Angular core, which is organized around URL routes, UI-Router
+        is organized around states, which may optionally have routes, as well as other behavior, attached.States are
+        bound to named, nested and parallel views, allowing you to powerfully manage your application's
+        interface.Warning: UI-Router is pre-beta and under active development. As such, while this library is
+        well-tested, the API is subject to change. Using it in a project that requires guaranteed stability is not
+        recommended.</p>
+</div>
+<div class="col-md-3">
+    <ul class="nav nav-pills nav-stacked" style='margin-bottom: 20px;background-color:#fff;' data-offset-top="-80"
+        bs-affix>
+        <li class="active"><a href="">xxx</a></li>
+        <li><a href="">xxx</a></li>
+        <li><a href="">xxx</a></li>
+    </ul>
+    <ul class="nav nav-pills nav-stacked" style='background-color:#fff;' data-offset-top="-224" bs-affix>
+        <li class="active"><a href="">xxx</a></li>
+        <li><a href="">xxx</a></li>
+        <li><a href="">xxx</a></li>
+    </ul>
+</div>
+<!-- col start -->
+<div class="col-md-9">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Web Storage example</h3>
+        </div>
+        <div class="panel-body">
+            <h4>session storage<p class="pull-right">By <a href="http://shwetankdixit.com">Shwetank Dixit</a></p></h4>
+
+            <form action="" class="form-horizontal">
+                <div class="form-group">
+                    <label for="" class="control-label col-sm-2">SessionStorage</label>
+
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" id="sessionForm" ng-model="sessionTmp">
+                    </div>
+                    <div class="col-sm-3"><a href="" class="btn btn-success" ng-click="setSession();">save</a> <a
+                            href="" class="btn btn-warning">del</a> <a href="" class="btn btn-danger"
+                                                                       ng-click="clearSession();">clear</a></div>
+                </div>
+                <div class="form-group" id="displaySession">
+                    <p class="col-sm-offset-2 col-sm-10" ng-bind="sessionTmp">{{sessionTmp}}<i>(此处数据使用会话存储，当关闭浏览器时数据会自动清空。)</i>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">navbar</h3>
+        </div>
+        <div class="panel-body">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs navtabs-toggles" role="tablist">
+                <li ui-sref-active="active"><a ui-sref="root.about.target">target</a></li>
+                <li ui-sref-active="active"><a ui-sref="root.about.profile">Profile</a></li>
+                <li ui-sref-active="active"><a ui-sref="root.about.messages">Messages</a></li>
+                <li ui-sref-active="active"><a ui-sref="root.about.settings">Settings</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content" ui-view></div>
+            <form class="form-inline" action="">
+                <select class="form-control" name="" id="" ng-model="myCitys" ng-options="city.name for city in citys">
+                    <option value="">--please select area--</option>
+                </select>
+
+            </form>
+        </div>
+    </div>
+    <hr>
+    <p>This is the about view.</p>
+    <!-- accordion start -->
+    <p>
+        <button class="btn btn-default btn-sm" ng-click="status.open = !status.open">Toggle last panel</button>
+        <button class="btn btn-default btn-sm" ng-click="status.isFirstDisabled = ! status.isFirstDisabled">Enable /
+            Disable first panel
+        </button>
+    </p>
+
+    <!-- <label class="checkbox">
+      <input type="checkbox" ng-model="oneAtATime">
+      Open only one at a time
+    </label> -->
+    <accordion close-others="oneAtATime">
+        <accordion-group heading="Static Header, initially expanded" is-open="status.isFirstOpen"
+                         is-disabled="status.isFirstDisabled">
+            This content is straight in the template.
+        </accordion-group>
+        <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+            {{group.content}}
+        </accordion-group>
+        <accordion-group heading="Dynamic Body Content">
+            <p>The body of the accordion group grows to fit the contents</p>
+            <button class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+            <div ng-repeat="item in items">{{item}}</div>
+        </accordion-group>
+        <accordion-group is-open="status.open">
+            <accordion-heading>
+                I can have markup, too! <i class="pull-right fa"
+                                           ng-class="{'fa-chevron-down': status.open, 'fa-chevron-right': !status.open}"></i>
+            </accordion-heading>
+            This is just some content to illustrate fancy headings.
+        </accordion-group>
+    </accordion>
+    <!-- accordion start -->
+    <div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">navbar</h3>
+            </div>
+            <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs navtabs-toggles" role="tablist">
+                    <li ui-sref-active="active"><a ui-sref="root.about.target">target</a></li>
+                    <li ui-sref-active="active"><a ui-sref="root.about.profile">Profile</a></li>
+                    <li ui-sref-active="active"><a ui-sref="root.about.messages">Messages</a></li>
+                    <li ui-sref-active="active"><a ui-sref="root.about.settings">Settings</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content" ui-view></div>
+
+            </div>
+        </div>
+
+    </div>
+    <hr>
+    <p>This is the about view.</p>
+    <!-- accordion start -->
+    <p>
+        <button class="btn btn-default btn-sm" ng-click="status.open = !status.open">Toggle last panel</button>
+        <button class="btn btn-default btn-sm" ng-click="status.isFirstDisabled = ! status.isFirstDisabled">Enable /
+            Disable first panel
+        </button>
+    </p>
+
+    <!-- <label class="checkbox">
+      <input type="checkbox" ng-model="oneAtATime">
+      Open only one at a time
+    </label> -->
+    <accordion close-others="oneAtATime">
+        <accordion-group heading="Static Header, initially expanded" is-open="status.isFirstOpen"
+                         is-disabled="status.isFirstDisabled">
+            This content is straight in the template.
+        </accordion-group>
+        <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+            {{group.content}}
+        </accordion-group>
+        <accordion-group heading="Dynamic Body Content">
+            <p>The body of the accordion group grows to fit the contents</p>
+            <button class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+            <div ng-repeat="item in items">{{item}}</div>
+        </accordion-group>
+        <accordion-group is-open="status.open">
+            <accordion-heading>
+                I can have markup, too! <i class="pull-right fa"
+                                           ng-class="{'fa-chevron-down': status.open, 'fa-chevron-right': !status.open}"></i>
+            </accordion-heading>
+            This is just some content to illustrate fancy headings.
+        </accordion-group>
+    </accordion>
+    <!-- accordion start -->
+</div>
+
+<div class="col-md-12">
+    <h3>$http request&response</h3>
+
+    <div class="row">
+        <div class="col-md-6">
+            <!--Sidebar content-->
+
+            Search: <input ng-model="query">
+            Sort by:
+            <select ng-model="orderProp">
+                <option value="name">Alphabetical</option>
+                <option value="age">Newest</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <!--Body content-->
+
+            <ul class="phones">
+                <li ng-repeat="phone in phones | filter:query | orderBy:orderProp">
+                    <!--<li ng-repeat="phone in phones">-->
+                    <span>{{phone.name}}</span>
+
+                    <p>{{phone.snippet}}</p>
+                    <!--<img src={{phone.imageUrl}} alt=""/>-->
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+

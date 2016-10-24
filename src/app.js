@@ -5,7 +5,7 @@
  * @version $Id$
  */
 
-var alertModule = angular.module('alertApp', [
+var alertModule = angular.module('myNGShowcase', [
     'ui.router',
 	'ngAnimate',
 	'ngSanitize',
@@ -13,9 +13,8 @@ var alertModule = angular.module('alertApp', [
 	'mgcrea.ngStrap',
 	'ui.select2'
 	// ,'ng.ueditor'
-]);
-alertModule.config(function($stateProvider, $urlRouterProvider){
-
+])
+.config(function($stateProvider, $urlRouterProvider){
     $urlRouterProvider.when('', '/root/main');
     $urlRouterProvider.when('/', '/root/main');
 	// 如果没有匹配的URL，就定向到此URL地址

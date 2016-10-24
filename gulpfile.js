@@ -17,7 +17,7 @@ var gulp = require('gulp'),
 
 gulp.task('serve', ['sassTask'], function(){
 	browserSync.init({
-		server: "src",
+		server: "./src",
 	    open: false,
 	    ghostMode: false,
 		port: 9005

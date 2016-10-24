@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @ngdoc function
  * @name angularBsApp.controller:MainCtrl
@@ -7,11 +5,11 @@
  * # MainCtrl
  * Controller of the angularBsApp
  */
-angular.module('angularBsApp')
-    .run(['$anchorScroll', function ($anchorScroll) {
+alertModule
+    /*.run(['$anchorScroll', function ($anchorScroll) {
         // Always scroll by 50 pixels
         $anchorScroll.yOffset = 50;
-    }])
+    }])*/
     .controller('MainCtrl', function ($scope, $location, $anchorScroll) {
         // Ng-mfb
         $scope.mfbButtons = [
@@ -21,10 +19,15 @@ angular.module('angularBsApp')
 
 
         //Draggable
-        $scope.draggableObjects = [{name: 'one'}, {name: 'two'}, {name: 'three'}, {
-            name: 'no-clone',
-            allowClone: false
-        }];
+        $scope.draggableObjects = [
+            {name: 'one'},
+            {name: 'two'},
+            {name: 'three'},
+            {
+                name: 'no-clone',
+                allowClone: false
+            }
+        ];
         $scope.droppedObjects1 = [];
         $scope.droppedObjects2 = [];
 

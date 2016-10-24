@@ -18,7 +18,8 @@
 AlertController.$inject = ['$scope', '$alert'];
 alertModule.controller('AlertController', AlertController);*/
 
-alertModule.controller('AlertController', ['$scope', '$alert', '$modal', '$window', function($scope, $alert, $window, $modal){
+alertModule
+	.controller('AlertController', ['$scope', '$alert', '$modal', '$window', function($scope, $alert, $window, $modal){
 
     // angular-ui-bootstrap v2.1.4
 	$scope.tabs = [

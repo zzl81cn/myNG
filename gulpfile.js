@@ -22,7 +22,7 @@ gulp.task('serve', ['sassTask'], function(){
 	    ghostMode: false,
 		port: 9005
 	});
-	gulp.watch("./less/*.less", ['lessTask']);
+	// gulp.watch("./less/*.less", ['lessTask']);
 	gulp.watch("./sass/*.scss", ['sassTask']);
 	gulp.watch("./js/*.js", ['jsminTask']);
 	// gulp.watch("./css/*.css", ['autoPrefixer']);

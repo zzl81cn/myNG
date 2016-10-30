@@ -1,0 +1,30 @@
+//JSON
+{
+  "count": "2",
+  "list": [
+    {
+      "user_id": "12",
+      "email": "admin@ddhigh.com",
+      "nickname": "拖鞋",
+      "avatar": "http://q.qlogo.cn/qqapp/101191761/0D040ED029959BB79FD1A0927FD48989/100",
+      "sex": "1",
+      "status": "1",
+      "phone": "",
+      "description": null,
+      "created_at": "1427303955",
+      "score": "0"
+    },
+    {
+      "user_id": "4",
+      "email": "xxx@qq.com",
+      "nickname": "111",
+      "avatar": "",
+      "sex": "1",
+      "status": "1",
+      "phone": "",
+      "description": null,
+      "created_at": "1426777188",
+      "score": "0"
+    }
+  ]
+}

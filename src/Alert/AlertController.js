@@ -19,7 +19,7 @@ AlertController.$inject = ['$scope', '$alert'];
 alertModule.controller('AlertController', AlertController);*/
 
 alertModule
-	.controller('AlertController', ['$scope', '$alert', '$modal', '$window', function($scope, $alert, $window, $modal){
+	.controller('AlertController', ['$scope', '$rootScope', '$http', '$alert', '$modal', '$window', function($scope, $rootScope, $http, $alert, $window, $modal){
 
     // angular-ui-bootstrap v2.1.4
 	$scope.tabs = [
@@ -59,4 +59,20 @@ alertModule
 	};
     vm.value2 = ['应用', '模型', '数据'];
 
-}]);
+		//
+	$scope.list = [];
+	$scope.keyword = '';
+	$scope.load = function (page, size, callback) {
+		$http.get($rootScope.api + '/course/list?keyword=' + $scope.keyword + '&page=' + page + '&size=' + size)
+			.success(function (data) { callback && callback(data); });
+	}
+
+	}])
+	/*.controller('CourseListController', ['$rootScope', '$scope', '$http', function ($rootScope, $scope, $http) {
+		$scope.list = []; $scope.keyword = '';
+		$scope.load = function (page, size, callback) {
+			$http.get($rootScope.api + '/course/list?keyword=' + $scope.keyword + '&page=' + page + '&size=' + size)
+				.success(function (data) { callback && callback(data); });
+		}
+	}])*/
+;

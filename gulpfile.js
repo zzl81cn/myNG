@@ -15,23 +15,51 @@ var gulp = require('gulp'),
 	jsmin = require('gulp-uglify'),
 	browserSync = require('browser-sync').create();
 
+var src = './src',
+	dist = './dist',
+	staticSrc = ['./src'],
+	// Demo URL
+	proxyURL = 'http://192.168.15.206:8002';
+// proxyURL = 'http://rap.taobao.org';
+// Dev URL
+// proxyURL = 'http://192.168.16.167:9998';
+
 gulp.task('serve', ['sassTask'], function(){
 	browserSync.init({
-		server: "./src",
+		// staticPath proxy mode must disable
+		server: src,
 	    open: false,
-	    ghostMode: false,
-		port: 9005
+		ghostMode: {
+			clicks: false,
+			forms: true,
+			scroll: false
+		},
+		port: 9005,
+		// Disable UI completely
+		ui: false
+		// Directory mode
+		// directory: true,
+		// Proxy start
+		// For proxyStaticPath
+		/*serveStatic: staticSrc,
+		proxy:{
+			// domain
+			target: proxyURL
+			// When your app also uses web socket
+			// ,ws:true
+		}*/
+
 	});
 	// gulp.watch("./less/*.less", ['lessTask']);
-	gulp.watch("./sass/*.scss", ['sassTask']);
-	gulp.watch("./js/*.js", ['jsminTask']);
+	gulp.watch("./src/assets/scss/**/*.scss", ['sassTask']);
+	// gulp.watch("./js/*.js", ['jsminTask']);
 	// gulp.watch("./css/*.css", ['autoPrefixer']);
 	gulp.watch("./**/*.html").on('change', browserSync.reload);
 });
 
-gulp.task('lessTask', function(){
+/*gulp.task('lessTask', function(){
 	// multiple files change to array type (['','',...])
-	return gulp.src('less/*.less')
+	return gulp.src('less/!*.less')
 			.pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
 			.pipe(less())
 			// .pipe(mincss({compatibility: 'ie7'}))
@@ -43,10 +71,10 @@ gulp.task('lessTask', function(){
 
 			.pipe(gulp.dest('css'))
 			.pipe(browserSync.stream());
-});
+});*/
 
 gulp.task('sassTask', function(){
-	return gulp.src('./sass/*.scss')
+	return gulp.src('./src/assets/scss/*.scss')
 			.pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
 			// compressed,expanded
 			.pipe(sass({outputStyle:'expanded'}))
@@ -54,7 +82,7 @@ gulp.task('sassTask', function(){
 						browsers: ['last 2 versions','Firefox <= 20'],
 						cascade: false
 					}))			
-			.pipe(gulp.dest('./css'))
+			.pipe(gulp.dest('./src/assets/css'))
 			.pipe(browserSync.stream());
 });
 

@@ -16,29 +16,29 @@ var alertModule = angular.module('myNGShowcase', [
 ])
 .config(function($stateProvider, $urlRouterProvider){
     $urlRouterProvider.when('', '/root/main');
-    $urlRouterProvider.when('/', '/root/main');
+    // $urlRouterProvider.when('/', '/root/main');
 	// 如果没有匹配的URL，就定向到此URL地址
-	// $urlRouterProvider.otherwise('/root/alert');
+	$urlRouterProvider.otherwise('/', 'root/main');
 	$stateProvider
 		.state('root', {
 			url: '/root',
 			views: {
 				'head': {
-                    templateUrl: 'views/head.html'
+                    templateUrl: 'views/root/head.html'
 				},
 				'': {
-					templateUrl: 'views/root.html'
+					templateUrl: 'views/root/root.html'
 				}
 			}
 		})
         .state('root.main', {
             url: '/main',
-            templateUrl: 'views/main.html',
+            templateUrl: 'views/main/main.html',
             controller: 'MainCtrl'
         })
         .state('root.alert', {
             url: '/alert',
-            templateUrl: 'Alert/Alert.html',
+            templateUrl: 'views/alert/Alert.html',
             controller: 'AlertController'
         })
 		.state('state1', {

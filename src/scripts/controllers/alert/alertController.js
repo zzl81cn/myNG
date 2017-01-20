@@ -67,7 +67,7 @@ alertModule
 			.success(function (data) { callback && callback(data); });
 	}
 
-	}])
+}])
 	/*.controller('CourseListController', ['$rootScope', '$scope', '$http', function ($rootScope, $scope, $http) {
 		$scope.list = []; $scope.keyword = '';
 		$scope.load = function (page, size, callback) {

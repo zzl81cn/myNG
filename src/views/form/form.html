@@ -1,0 +1,21 @@
+<div class="col-md-12">
+	<p>xxx</p>
+	<!--<dualmultiselect
+			options="options"
+			input-model=“inputModel”
+			recursion-check="Boolean"
+			output-all-info="Boolean"
+			output-duplicate="Boolean"
+			ng-model="value"></dualmultiselect>-->
+
+	<div class="form-fenxiao" star-rating ng-model="ratingValue" max="5" on-rating-selected="rateFunction(rating)"></div>
+	<input type="text" ng-model="color">
+	<!--使用 @colorAttr 隔离-->
+	<!--<hello-world color-attr="{{color}}"/>-->
+	<!--使用 @ 隔离-->
+	<!--<hello-world color="{{color}}"/>-->
+	<!--使用 = 隔离-->
+	<hello-world color="color" say-hello-isolated="sayHello()"/>
+	<!--<h3 hello-world></h3>-->
+	<say-hello sayHelloIsolated="sayHello()"/>
+</div>

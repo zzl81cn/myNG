@@ -5,12 +5,13 @@
  * # MainCtrl
  * Controller of the angularBsApp
  */
-alertModule
+// alertModule
+angular.module('mainModule', [])
     /*.run(['$anchorScroll', function ($anchorScroll) {
         // Always scroll by 50 pixels
         $anchorScroll.yOffset = 50;
     }])*/
-    .controller('MainCtrl', function ($scope, $location, $anchorScroll) {
+    .controller('mainCtrl',['$scope', '$location', '$anchorScroll', function ($scope, $location, $anchorScroll) {
         // Ng-mfb
         $scope.mfbButtons = [
             {label: 'news1', icon: 'ion-paper-airplane'},
@@ -168,8 +169,8 @@ alertModule
         $scope.alertMe = function () {
             setTimeout(function () {
                 $window.alert('You\'ve selected the alert tab!');
-            });
+            }, 2000);
         };
 
-    });
+}]);
 

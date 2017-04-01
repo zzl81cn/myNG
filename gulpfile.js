@@ -74,7 +74,7 @@ gulp.task('serve', ['sassTask'], function(){
 });*/
 
 gulp.task('sassTask', function(){
-	return gulp.src('./src/assets/scss/*.scss')
+	return gulp.src('./src/assets/scss/**/*.scss')
 			.pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
 			// compressed,expanded
 			.pipe(sass({outputStyle:'expanded'}))

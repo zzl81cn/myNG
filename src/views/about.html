@@ -30,6 +30,49 @@
         </div>
     </div>
 </div>
+
+<div class="col-md-12">
+    <div class="titleL titleL-first">
+        <span class="white">一、数据源</span>
+    </div>
+    <table class="table table-bordered big-table">
+        <thead>
+        <tr>
+            <td>商品类型</td>
+            <td>名称</td>
+            <td>周期</td>
+            <td>有效期</td>
+            <td>收益（元）</td>
+            <td>数量</td>
+            <td>优惠</td>
+            <td>总价</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat-start="st in states">
+            <td rowspan="{{st.counties.length}}">{{st.name}}</td>
+            <td>{{st.counties[0].name}}</td>
+            <td>{{st.counties[0].payMethod}}</td>
+            <td>{{st.counties[0].date}}</td>
+            <td>{{st.counties[0].earnings}}</td>
+            <td>{{st.counties[0].count}}</td>
+            <td>{{st.counties[0].count}}</td>
+            <td>{{st.counties[0].count}}</td>
+        </tr>
+        <tr ng-repeat-end ng-repeat="county in st.counties" ng-hide="$first">
+            <td>{{county.name}}</td>
+            <td>{{county.payMethod}}</td>
+            <td>{{county.date}}</td>
+            <td>{{county.earnings}}</td>
+            <td>{{county.count}}</td>
+            <td>{{county.count}}</td>
+            <td>{{county.count}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
 <div class="col-md-12">
     <p>AngularUI Router is a routing framework for AngularJS, which allows you to organize the parts of your interface
         into a state machine. Unlike the $route service in Angular core, which is organized around URL routes, UI-Router

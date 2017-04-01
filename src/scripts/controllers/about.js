@@ -25,6 +25,24 @@ angular.module('aboutModule', ['angularBsAppDirectiveModule'])
 			//console.log(data);
 		});
 
+
+		// table
+		var oh_counties = [
+				{name: "采矿业企业", platform: "BDGStore", payMethod: '1', date: '3', count: 300, earnings: 3000, zips: [111, 222, 333, 555]},
+				{name: "食品餐饮业", platform: "BDGStroe", payMethod: '1', date: '3', count: 300, earnings: 3000, zips: [333, 222, 333, 444]},
+				{name: "文化娱乐业", platform: "开放平台", payMethod: '1', date: '3', count: 300, earnings: 3000, zips: [666, 222, 333, 444]}
+			],
+			wi_counties = [
+				{name: "Dane", zips: [111]},
+				{name: "Adams", zips: [111, 222, 333, 444]}
+			];
+
+		$scope.states = [
+			{name: "数据源", counties: oh_counties}
+			// ,{name: "食品餐饮业", counties: wi_counties}
+		];
+
+
 		$scope.orderProp = 'age';
 
 

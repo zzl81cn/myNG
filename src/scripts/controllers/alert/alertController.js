@@ -18,8 +18,8 @@
 AlertController.$inject = ['$scope', '$alert'];
 alertModule.controller('AlertController', AlertController);*/
 
-alertModule
-	.controller('AlertController', ['$scope', '$rootScope', '$http', '$alert', '$modal', '$window', function($scope, $rootScope, $http, $alert, $window, $modal){
+angular.module('alertModule', [])
+	.controller('alertCtrl', ['$scope', '$rootScope', '$http', '$alert', '$modal', '$window', function($scope, $rootScope, $http, $alert, $window, $modal){
 
     // angular-ui-bootstrap v2.1.4
 	$scope.tabs = [
@@ -45,7 +45,10 @@ alertModule
 
     // angular-strap modal
 	// Button to trigger a default modal with a scope as an object {title:'', content:'', etc.}
-	$scope.modal = {title: 'Title', content: 'Hello Modal oo<br />This is a multiline message!<br /> Ha.'};
+	$scope.modal = {
+		title: 'Title',
+		content: 'Hello Modal oo <br\>This is a multiline message!<br /> Ha.'
+	};
 
 	// angular-ui select2
 	var vm = $scope.vm = {};

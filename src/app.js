@@ -11,8 +11,12 @@ var alertModule = angular.module('myNGShowcase', [
 	'ngSanitize',
 	'ui.bootstrap',
 	'mgcrea.ngStrap',
-	'ui.select2'
-	// ,'ng.ueditor'
+	'ui.select2',
+	'DualMultiSelect',
+	// ,'ng.ueditor',
+	// 'helloWolrdDirectiveModule',
+	'mainModule',
+	'formModule'
 ])
 .config(function($stateProvider, $urlRouterProvider){
     $urlRouterProvider.when('', '/root/main');
@@ -34,13 +38,18 @@ var alertModule = angular.module('myNGShowcase', [
         .state('root.main', {
             url: '/main',
             templateUrl: 'views/main/main.html',
-            controller: 'MainCtrl'
+            controller: 'mainCtrl'
         })
         .state('root.alert', {
             url: '/alert',
-            templateUrl: 'views/alert/Alert.html',
-            controller: 'AlertController'
+            templateUrl: 'views/alert/alert.html',
+            controller: 'alertCtrl'
         })
+		.state('root.form', {
+			url: '/form',
+			templateUrl: 'views/form/form.html',
+			controller: 'formCtrl'
+		})
 		.state('state1', {
 			url: '/state1',
 			templateUrl: 'partials/state1.html'
